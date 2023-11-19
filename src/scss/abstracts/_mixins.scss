@@ -1,0 +1,17 @@
+@mixin dflex( $direccion, $wrap, $justify, $align ) {
+  display: flex;
+  flex-flow: $direccion $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin dgrid( $columns, $espacio ) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $espacio;
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

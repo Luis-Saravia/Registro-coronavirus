@@ -1,0 +1,91 @@
+// // trabajando con mixins, estos se dividen en 2 partes:
+// // -> mixins con argumento
+// // -> mixins sin argumento
+//     // -> Sólo 1 argumento
+//     // -> Más de 1 argumento
+//     // -> Argumento con valor por defecto
+// // -> mixins con la regla @content
+// // -> mixins para flex 
+// // -> mixins para grid
+// // -> mixins para Responsive Design
+// // -> Crear tu propio mixin
+
+// // Como crear un mixin:
+
+// // 1. Mixin sin argumento.
+//       // -> Creamos uno con @mixin
+//       // -> Usamos con @include
+//       // Si no existen argumentos no es necesario agregar los parentesis
+
+// // creando un mixin con ()
+// @mixin nombreMixin(){
+//   background: black;
+// }
+// header {
+//   @include nombreMixin() // usamos el mixin con llaves
+// }
+
+
+// // creando un mixin sin ()
+// @mixin otroMixin {
+//   background: black;
+// }
+// header {
+//   @include nombreMixin // usamos el mixin sin llaves
+// }
+
+
+// // 2. Mixin con argumento.
+//   // -> Siempre con los ()
+//   // -> Recuerda que los argumentos son como las "variables" de css
+
+// // Mixin con un solo argumento
+// @mixin nombre( $argumento1 ){
+//   color: $argumento1
+// }
+
+// p {
+//   @include nombre( green )
+// }
+
+// // Mixin con más de un argumento
+// @mixin nombre( $argumento1, $argumento2, $argumento3 ){
+//   color: $argumento1;
+//   font-weight: $argumento2;
+//   font-size: $argumento3;
+// }
+
+// p {
+//   @include nombre( green, bold, 20px )
+// }
+
+// /////////////////////////////////////////////////////////////////
+// /// Argumento predeterminado
+// @mixin nombre( $argumento1: red ){
+//   color: $argumento1
+// }
+
+// span {
+//   @include nombre()
+// }
+
+// a {
+//   @include nombre(orange)
+// }
+
+// /////////////////////////////////////////////////////////////////
+// // 3. Mixin con la Regla @content
+//     // -> Nos permite introducir múltiples propiedades CSS dentro de un mixin
+//     // -> Muy usado para Responsive Design
+// @mixin movil() {
+//   @media screen and (max-width: 480px) {
+//     @content
+//   }
+// }
+// p {
+//   font-size: 4rem;
+
+//   @include movil() {
+//     font-size: 2rem;
+//   }
+// }

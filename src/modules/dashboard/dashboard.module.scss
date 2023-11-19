@@ -1,0 +1,20 @@
+@import '../../scss/abstracts/mixins';
+
+section {
+  padding: 10px;
+  
+  > div {
+    @include dflex(row, nowrap, space-around, center);
+
+    li {
+      margin-left: 50px;
+    }
+  }
+
+  .containerButton {
+    @include dflex(row, nowrap, space-around, center);
+
+    width: max(140px, 20%);
+
+  }
+}
